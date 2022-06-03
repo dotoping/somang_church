@@ -2,25 +2,39 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
+import logo from '../assets/logo.png';
 
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <div className="nav__logo">Somang Church</div>
+      <div className="nav__logo">
+        <img src={logo} alt="logo" width={'120px'} height={'120px'} />
+      </div>
       <ul className="nav__menu">
         <li>
-          <Link to='/'>Home</Link>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to='/about'>About</Link>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to='/contact'>Contact</Link>
+          <Link to="/service">Service</Link>
+        </li>
+        <li>
+          <Link to="/giving">Giving</Link>
         </li>
       </ul>
       <ul className="nav__icons">
         <li>
-          <FacebookIcon />
+          <FacebookIcon
+            style={{ cursor: 'pointer' }}
+            onClick={() =>
+              window.open(
+                'https://ko-kr.facebook.com/melSomangchurch/',
+                '_blank'
+              )
+            }
+          />
         </li>
         <li>
           <InstagramIcon />
